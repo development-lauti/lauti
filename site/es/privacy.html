@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lauti – Política de privacidad</title>
+<meta name="description" content="Política de privacidad de la app Lauti.">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="../en/privacy.html">
+<link rel="alternate" hreflang="de" href="../de/privacy.html">
+<link rel="alternate" hreflang="es" href="../es/privacy.html">
+<link rel="alternate" hreflang="fr" href="../fr/privacy.html">
+<link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./"><img src="../assets/icon-256.png" alt="">Lauti</a>
+  <nav class="main" aria-label="Principal">
+    <a href="./">Resumen</a>
+    <a href="tour.html">Tour</a>
+    <a href="privacy.html" aria-current="page">Privacidad</a>
+  </nav>
+  <nav class="lang" aria-label="Idioma">
+    <a href="../en/privacy.html">en</a><a href="../de/privacy.html">de</a><a href="../es/privacy.html" aria-current="true">es</a><a href="../fr/privacy.html">fr</a>
+  </nav>
+</div></header>
+<main><div class="wrap">
+  <h1>Política de privacidad de Lauti</h1>
+  <p>Última actualización: 4 de octubre de 2026</p>
+  <p class="note">Esta es una traducción. La <a href="../de/privacy.html" hreflang="de">versión en alemán</a> es el texto vinculante.</p>
+  <p>Esta política de privacidad explica qué datos se tratan al usar la app <strong>Lauti</strong> y cómo se manejan.</p>
+  <h2>1. Responsable</h2>
+  <p>Correo electrónico: <a href="mailto:development.lauti@gmail.com">development.lauti@gmail.com</a></p>
+
+  <h2>2. Principio básico: almacenamiento local de datos</h2>
+  <p>Lauti es una app para reproducir cuentos, música y pódcast mediante tarjetas NFC, pensada especialmente para el uso por parte de niños ("Modo Niños"). La app funciona <strong>sin cuenta de usuario y sin registro</strong>. Todo el contenido que creas (sets de tarjetas, tarjetas, listas de reproducción, historial) se guarda exclusivamente <strong>de forma local en tu dispositivo</strong>, en una base de datos SQLite. <strong>No hay sincronización automática con ningún servidor del proveedor</strong>: el proveedor de la app no tiene acceso a estos datos.</p>
+  <p>En concreto, se guarda localmente:</p>
+  <ul>
+    <li>Nombres y descripciones de los sets de tarjetas y sus ajustes (p. ej. volumen máximo, orden de reproducción, modo de repetición)</li>
+    <li>Identificadores de tarjetas NFC (el UID técnico de la tarjeta, p. ej. <code>aa:bb:cc:dd</code>) y los títulos/símbolos asignados</li>
+    <li>Listas de reproducción y las entradas multimedia que contienen (rutas a archivos de audio locales, URL de feeds RSS, títulos de canciones del servidor de música y referencias a las imágenes de portada correspondientes)</li>
+    <li>Mensajes de voz grabados por ti (véase el apartado 5)</li>
+    <li>El historial de reproducción de las últimas 200 listas reproducidas</li>
+    <li>Contadores de uso sencillos (número total de tarjetas reproducidas, tiempo total de reproducción y suma de los importes donados voluntariamente), que solo se muestran en la app</li>
+    <li>La contraseña parental de cuatro dígitos para salir del Modo Niños y los ajustes de la app (p. ej. el progreso de la introducción, la opción "Mantener canciones en el dispositivo", el bloqueo de pantalla opcional del Modo Niños), guardados en el dispositivo mediante <code>shared_preferences</code></li>
+    <li>Si usas un servidor de música: las credenciales, así como canciones e imágenes de portada en caché (véase el apartado 7.2)</li>
+  </ul>
+  <p>Estos datos permanecen en el dispositivo hasta que los elimines en la app o desinstales la app.</p>
+
+  <h2>3. Función NFC</h2>
+  <p>Lauti utiliza la interfaz NFC de tu dispositivo para detectar tarjetas/etiquetas NFC. Solo se lee el número de serie técnico (UID) de la etiqueta y se asigna localmente a una lista de reproducción creada por ti. No se guardan ni se leen datos personales en las etiquetas, y el UID no se transmite a servidores de terceros ni al proveedor.</p>
+
+  <h2>4. Acceso a archivos multimedia locales</h2>
+  <p>Para añadir tus propios archivos de audio (p. ej. radioteatros) a una lista de reproducción, la app necesita acceso al almacenamiento local o a la mediateca de tu dispositivo (permisos de Android <code>READ_MEDIA_AUDIO</code> / <code>READ_EXTERNAL_STORAGE</code>). Los archivos seleccionados se reproducen exclusivamente de forma local; no se suben.</p>
+
+  <h2>5. Micrófono y grabaciones de voz</h2>
+  <p>Para el tipo de medio "Grabación" (mensajes de voz), la app necesita el permiso <code>RECORD_AUDIO</code>. Una grabación solo se inicia cuando se activa de forma explícita en el Modo Niños con el botón de grabar (que solo es visible si el control de audio del set está activado). La grabación se <strong>guarda como archivo localmente en el dispositivo</strong> y se reproduce al acercar la tarjeta correspondiente. Las grabaciones <strong>no se transmiten</strong> al proveedor ni a terceros, y no se graba nada en segundo plano. Las grabaciones pueden contener voces de niños; se eliminan cuando borras la tarjeta o la entrada correspondiente, o desinstalas la app. Puedes retirar el permiso en cualquier momento en los ajustes del sistema; el resto de funciones de la app no se ven afectadas.</p>
+
+  <h2>6. Exportación, importación y uso compartido de sets</h2>
+  <p>Puedes exportar sets de tarjetas como archivo (<code>.lauti</code>, un archivo comprimido con los datos de las tarjetas, las listas de reproducción y los archivos de audio locales o grabaciones incluidos), importarlos y compartirlos mediante la función de compartir de tu sistema operativo. El archivo lo entregas únicamente tú al destino que elijas (p. ej. una app de mensajería o un almacenamiento en la nube); Lauti no lo transmite por sí misma a ningún servidor. Para su tratamiento por la app de destino elegida se aplica la política de privacidad de esta. Las credenciales de tu servidor de música no forman parte de la exportación. Ten en cuenta que las grabaciones de voz y las URL de feeds RSS incluidas se comparten también.</p>
+
+  <h2>7. Conexiones a internet</h2>
+  <p>La app requiere el permiso <code>INTERNET</code>, que se utiliza exclusivamente para las siguientes funciones que tú mismo configuras o activas. El proveedor de la app no opera ningún servidor al que se envíen datos de la app, y no se utilizan servicios de analítica, seguimiento ni publicidad.</p>
+
+  <h3>7.1 Feeds RSS / pódcast</h3>
+  <p>Cuando añades un feed RSS (p. ej. un pódcast) a una lista de reproducción, la app obtiene la URL del feed que indicaste, los archivos de audio que contiene y la imagen de portada indicada en el feed directamente del proveedor de ese feed. Por motivos técnicos, se transmiten datos de conexión (p. ej. la dirección IP) al operador de ese feed o servidor. Se aplica la política de privacidad del proveedor del feed correspondiente, sobre la que el proveedor de Lauti no tiene influencia.</p>
+
+  <h3>7.2 Tu propio servidor de música (compatible con Navidrome/Subsonic)</h3>
+  <p>Lauti ofrece opcionalmente la posibilidad de conectarse a un servidor de música propio, autoalojado o elegido por ti (p. ej. Navidrome, Airsonic, Gonic). Si usas esta función, introduces la dirección del servidor, el nombre de usuario y la contraseña. Estas credenciales:</p>
+  <ul>
+    <li>se guardan <strong>localmente en tu dispositivo</strong> mediante <code>shared_preferences</code>,</li>
+    <li>se utilizan exclusivamente para autenticarte ante <strong>el servidor que indicaste</strong> (conexión, búsqueda, consulta de información de canciones e imágenes de portada, streaming y descarga de canciones mediante la API de Subsonic),</li>
+    <li><strong>no</strong> se transmiten al proveedor de Lauti.</li>
+  </ul>
+  <p>En cada solicitud, la contraseña se envía al servidor de música no en texto plano, sino como un hash con sal. El operador del servidor de música que configuraste es responsable del tratamiento de tus datos en dicho servidor.</p>
+  <p><strong>Caché:</strong> Las canciones reproducidas pueden guardarse como archivos en el almacenamiento privado de la app en tu dispositivo para su uso sin conexión; si la opción "Mantener canciones en el dispositivo" está activada, se descargan todas las canciones de tus tarjetas. Las imágenes de portada (de álbumes o pódcast) se descargan la primera vez que se muestran y se guardan localmente. Los archivos que ya no se usan se eliminan automáticamente cuando se borra la entrada, la tarjeta o el set correspondiente. Estos archivos no salen del dispositivo.</p>
+
+  <h3>7.3 Compras dentro de la app (función de apoyo/donación)</h3>
+  <p>Para los importes voluntarios de apoyo de pago único, la app utiliza las interfaces de compra integrada de Google Play o de la Apple App Store (permiso <code>com.android.vending.BILLING</code>). El procesamiento del pago lo realiza íntegramente Google o Apple; Lauti solo recibe una confirmación de que la compra se completó, pero ningún dato de pago ni de cuenta. Localmente, la app recuerda el importe y el momento de la compra para mostrar un agradecimiento y contabilizar el apoyo total. Además se aplican las políticas de privacidad de Google o Apple.</p>
+
+  <h2>8. Reproducción en segundo plano, pantalla y función kiosco</h2>
+  <p>Para que la reproducción continúe con la pantalla bloqueada, la app utiliza un servicio en primer plano para la reproducción multimedia (permisos <code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>) junto con una notificación multimedia, así como <code>WAKE_LOCK</code> para evitar que el dispositivo entre en reposo durante la reproducción o en el Modo Niños. <code>MODIFY_AUDIO_SETTINGS</code> se usa para controlar el volumen de reproducción. Opcionalmente, el Modo Niños puede utilizar la fijación de pantalla de Android ("modo kiosco") para dificultar que se salga de la app. En ello no se recogen ni se transmiten datos.</p>
+
+  <h2>9. Sin servicios de analítica, seguimiento ni publicidad</h2>
+  <p>Lauti no integra herramientas de analítica (p. ej. Google Analytics, Firebase), servicios de informes de fallos ni redes publicitarias. No se realiza ningún seguimiento de tu comportamiento de uso. Los contadores de uso mencionados en el apartado 2 permanecen exclusivamente en tu dispositivo.</p>
+
+  <h2>10. Uso por parte de niños (Modo Niños)</h2>
+  <p>El Modo Niños está diseñado para que los niños solo puedan escanear tarjetas NFC y reproducir listas (y, si los padres lo han activado, grabar mensajes de voz); cambiar los ajustes del dispositivo o salir del modo solo es posible con una contraseña definida por los padres. En el Modo Niños <strong>no se recogen datos adicionales</strong> sobre el niño ni se transmiten a terceros; las grabaciones de voz permanecen localmente en el dispositivo (apartado 5). No se muestran servicios de publicidad ni de seguimiento.</p>
+
+  <h2>11. Plazo de conservación y eliminación</h2>
+  <p>Los datos mencionados en el apartado 2 se conservan hasta que los elimines manualmente (p. ej. tarjetas individuales, sets, grabaciones o el historial) o desinstales la app o restablezcas sus datos desde los ajustes del sistema. Además, el historial de reproducción se limita automáticamente a las últimas 200 entradas.</p>
+
+  <h2>12. Tus derechos</h2>
+  <p>Dado que todos los datos personales y de uso se guardan exclusivamente de forma local en tu dispositivo, tienes en todo momento pleno acceso y control sobre ellos, directamente en la app o mediante los ajustes de tu sistema operativo. Con independencia de ello, cuando se trate de datos personales, el RGPD te reconoce en principio los siguientes derechos: acceso (art. 15 RGPD), rectificación (art. 16 RGPD), supresión (art. 17 RGPD), limitación del tratamiento (art. 18 RGPD), portabilidad de los datos (art. 20 RGPD) y oposición (art. 21 RGPD). Para cualquier solicitud, dirígete a la dirección de contacto indicada en el apartado 1. Además, tienes derecho a presentar una reclamación ante una autoridad de control de protección de datos.</p>
+
+  <h2>13. Seguridad de los datos</h2>
+  <p>Como todos los datos de la app permanecen localmente en tu dispositivo, su protección depende en gran medida de la seguridad de este (p. ej. el bloqueo de pantalla). Para las conexiones a un servidor de música configurado por ti, recomendamos usar una conexión cifrada (HTTPS).</p>
+
+  <h2>14. Cambios en esta política de privacidad</h2>
+  <p>Esta política de privacidad puede modificarse con la evolución de la app o por cambios en los requisitos legales. La versión vigente se encuentra en la app y en la página correspondiente de la tienda.</p>
+
+  <h2>15. Contacto</h2>
+  <p>Para preguntas sobre privacidad, ponte en contacto con: <a href="mailto:development.lauti@gmail.com">development.lauti@gmail.com</a></p>
+</div></main>
+<footer class="site"><div class="wrap">
+  <a href="mailto:development.lauti@gmail.com">development.lauti@gmail.com</a>
+</div></footer>
+</body>
+</html>

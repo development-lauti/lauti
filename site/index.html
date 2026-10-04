@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lauti</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="alternate" hreflang="en" href="en/">
+<link rel="alternate" hreflang="de" href="de/">
+<link rel="alternate" hreflang="es" href="es/">
+<link rel="alternate" hreflang="fr" href="fr/">
+<link rel="alternate" hreflang="x-default" href="en/">
+<meta http-equiv="refresh" content="2; url=en/">
+<script>
+  var langs = ["en", "de", "es", "fr"], target = "en";
+  (navigator.languages || [navigator.language || "en"]).some(function (l) {
+    var c = String(l).slice(0, 2).toLowerCase();
+    if (langs.indexOf(c) >= 0) { target = c; return true; }
+  });
+  location.replace(target + "/");
+</script>
+</head>
+<body>
+<p>Choose your language:
+<a href="en/">English</a> · <a href="de/">Deutsch</a> · <a href="es/">Español</a> · <a href="fr/">Français</a></p>
+</body>
+</html>
