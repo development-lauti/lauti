@@ -1,6 +1,6 @@
 # Lauti
 
-Public website for the Lauti app (overview, tour, privacy policy) in English, German, Spanish and French.
+Public website for the Lauti app (overview, tour, privacy policy, terms and conditions) in English, German, Spanish and French.
 
 Published via GitHub Pages: https://development-lauti.github.io/lauti/
 
